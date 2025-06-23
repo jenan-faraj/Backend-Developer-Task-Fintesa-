@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const validator = require('validator');
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -9,18 +10,26 @@ const userSchema = new mongoose.Schema({
     trim: true,
     minlength: 3,
     maxlength: 50
+    // ممكن تضيفي regex هنا لو بدك تحددي شكل معين
   },
   email: {
     type: String,
     required: true,
     unique: true,
     trim: true,
-    lowercase: true
+    lowercase: true,
+    validate: {
+      validator: function(v) {
+        return validator.isEmail(v);
+      },
+      message: props => `${props.value} is not a valid email!`
+    }
   },
   password: {
     type: String,
     required: true,
     minlength: 6
+    // ممكن تضيفي تحقق تعقيد كلمة السر هنا
   },
   role: {
     type: String,
