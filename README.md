@@ -22,14 +22,14 @@ User authentication and authorization system built with React, Node.js, and Mong
 ### 1. Clone the Project
 
 ```bash
-git clone <repository-url>
-cd auth-system
+git clone https://github.com/jenan-faraj/Backend-Developer-Task-Fintesa-.git
+cd Backend-Developer-Task-Fintesa-
 ```
 
 ### 2. Backend Setup
 
 ```bash
-cd backend
+cd Back-End
 npm install
 ```
 
@@ -42,8 +42,8 @@ cp .env.example .env
 Edit the `.env` file and add:
 
 ```
-MONGODB_URI=mongodb://localhost:27017/auth_system
-JWT_SECRET=your_very_long_and_random_secret_key_here
+MONGODB_URI=mongodb_url
+JWT_SECRET=S3cr3tT0k3n_Genan2025!@#
 PORT=5000
 ```
 
@@ -60,7 +60,7 @@ npm run dev
 In a new terminal:
 
 ```bash
-cd frontend
+cd Front-End
 npm install
 npm run dev
 ```
@@ -122,7 +122,7 @@ db.users.updateOne(
 ## Important Files
 
 ```
-backend/
+Back-End/
 ├── server.js              # Entry point
 ├── config/database.js     # Database connection  
 ├── models/               # Data models
@@ -130,7 +130,7 @@ backend/
 ├── middleware/           # Middleware
 └── routes/              # Routes
 
-frontend/
+Front-End/
 ├── src/
 │   ├── components/       # React components
 │   ├── context/         # Context API
@@ -144,8 +144,8 @@ For development, run both backend and frontend servers:
 
 ```bash
 # Terminal 1 - Backend
-cd backend && npm run dev
+cd Back-End && npm run dev
 
 # Terminal 2 - Frontend  
-cd frontend && npm run dev
+cd Front-End && npm run dev
 ```
